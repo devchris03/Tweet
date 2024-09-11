@@ -7,19 +7,20 @@
     <title>Tweet | escribe un tweet</title>
 </head>
 <body>
-    <main class="tweet">
+    <main class="tweet" id="content">
         <h1 class="tweet-title">Lista de Tweets</h1>
-        <div class="tweet-content" id="content">
+        <div class="tweet-content">
             <form class="form" id="formulario">
                 <label for="tweetText" class="form-label">Tweet:</label>
                 <textarea class="form-textarea" cols="10" rows="5"  id="tweetText" placeholder="Escribe un tweet"></textarea>
                 <button class="form-submit" type="submit" aria-label="Agrega tu tweet a la lista">Agregar tweet</button>
             </form>
-            <section class="tweet-list" id="listTweet">
+            <section class="tweet-list">
                 <h2 class="tweet-subtitle">Mis tweets</h2>
-
+                <ul id="listTweet"></ul>
             </section>
         </div>
     </main>
+    <script src="./js/app.js"></script>
 </body>
 </html>
