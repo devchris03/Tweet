@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Tweet | escribe un tweet</title>
 </head>
 <body>
-    
+    <main class="tweet">
+        <h1 class="tweet-title">Lista de Tweets</h1>
+        <div class="tweet-content" id="content">
+            <form action="" class="form" id="formulario">
+                <label for="tweetText">Tweet:</label>
+                <textarea name="tweetText" id="tweetText" placeholder="Escribe un tweet"></textarea>
+                <button type="submit" aria-label="Agrega tu tweet a la lista">Agregar tweet</button>
+            </form>
+            <section class="tweet-list" id="listTweet">
+                <h2 class="tweet-subtitle">Mis tweets</h2>
+
+            </section>
+        </div>
+    </main>
 </body>
 </html>
