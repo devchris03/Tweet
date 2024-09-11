@@ -9,6 +9,8 @@ loadEvents()
 function loadEvents() {
     form.addEventListener('submit', addTweet);
 
+    listTweet.addEventListener('click', deletedTweet);
+
     document.addEventListener('DOMContentLoaded', () => {
         tweets = JSON.parse(localStorage.getItem('tweets') || []);
         showTweets()
@@ -50,7 +52,16 @@ function showTweets() {
     if(tweets.length > 0) {
         tweets.forEach(tweet => {
             const li = document.createElement('li');
+            const deleted = document.createElement('a')
+
+            deleted.classList.add('borrar');
+            li.dataset.tweetId = tweet.id;
+
+            deleted.textContent = 'x';
             li.textContent = tweet.tweet;
+
+
+            li.appendChild(deleted)
             listTweet.appendChild(li);
         })
     }
@@ -70,6 +81,13 @@ function cleanTweet() {
     while(listTweet.firstChild) {
         listTweet.removeChild(listTweet.firstChild);
     }
+}
+
+// elimina tweet
+function deletedTweet(event) {
+    const id = event.target.parentElement.dataset.tweetId
+    tweets = tweets.filter(tweet => tweet.id != id);
+    showTweets()
 }
 
 
