@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.tweet {
+    max-inline-size: 62.5rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    padding-block-start: 2rem;
+
+    & .tweet-title {
+        text-align: center;
+        margin-block-end: 2rem;
+    }
+
+    & .tweet-list {
+        margin-block-start: 2rem;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    
+    & .form-textarea {
+        resize: none;
+        border-radius: .5rem;
+        padding: .5rem;
+    }
+
+    & .form-submit {
+        padding: .5rem 1rem;
+        border-radius: 1rem;
+        font-weight: 700;
+        color: white;
+        text-transform: uppercase;
+        background: black;
+        cursor: pointer;
+        box-shadow: inset -2px -2px 2px rgb(64, 63, 63);
+        transition: scale .5s;
+
+        &:active {
+            scale: .9;
+        }
+    }
+}
+
+@media (width >= 768px) {
+    .tweet-content {
+        display: flex;
+        gap: 2rem;
+
+        & > * {
+            flex: 1;
+        }
+    }
+
+    .tweet .tweet-list {
+        margin-block-start: 0;
+    }
+
+    .tweet-subtitle {
+        margin-block-start: 0;
+        margin-block-end: 2rem;
+    }
+}
